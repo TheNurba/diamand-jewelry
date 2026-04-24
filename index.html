@@ -1,36 +1,82 @@
 <!DOCTYPE html>
 <html lang="ky">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title data-i18n="meta_title">Diamand — Алтын жана күмүш зергер дүкөнү</title>
-<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23D4AF37' d='M32 6l14 18-14 34L18 24z'/%3E%3C/svg%3E" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta_title">Diamand — Алтын жана күмүш зергер дүкөнү</title>
+  <meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poiret+One&family=Italiana&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23C9A449' d='M32 4l20 14-8 42H20L12 18z'/%3E%3C/svg%3E" />
 </head>
-<body>
+<body class="deco-body">
 
-<!-- ===== Navbar ===== -->
+<!-- Deco ornament SVG defs (reusable) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Sunburst fan -->
+    <symbol id="deco-fan" viewBox="0 0 200 100">
+      <g fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M100 100 L20 20 M100 100 L40 15 M100 100 L60 10 M100 100 L80 6 M100 100 L100 4 M100 100 L120 6 M100 100 L140 10 M100 100 L160 15 M100 100 L180 20"/>
+        <path d="M100 100 L30 30 Q100 -10 170 30 Z" opacity=".15" fill="currentColor"/>
+        <circle cx="100" cy="100" r="5" fill="currentColor"/>
+      </g>
+    </symbol>
+    <!-- Diamond/lozenge -->
+    <symbol id="deco-diamond" viewBox="0 0 40 40">
+      <g fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M20 2 L38 20 L20 38 L2 20 Z"/>
+        <path d="M20 8 L32 20 L20 32 L8 20 Z"/>
+        <circle cx="20" cy="20" r="2" fill="currentColor"/>
+      </g>
+    </symbol>
+    <!-- Chevron divider -->
+    <symbol id="deco-chev" viewBox="0 0 400 20">
+      <g fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M0 10 L190 10"/>
+        <path d="M210 10 L400 10"/>
+        <path d="M190 10 L200 2 L210 10 L200 18 Z" fill="currentColor" opacity=".8"/>
+      </g>
+    </symbol>
+    <!-- Corner ornament -->
+    <symbol id="deco-corner" viewBox="0 0 60 60">
+      <g fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M0 0 L60 0 L60 10 L10 10 L10 60 L0 60 Z" fill="currentColor" opacity=".15"/>
+        <path d="M0 0 L60 0 L60 10 L10 10 L10 60 L0 60 Z"/>
+        <path d="M18 18 L50 18 M18 18 L18 50"/>
+        <circle cx="18" cy="18" r="2" fill="currentColor"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===== Nav ===== -->
 <header class="nav">
-  <div class="container nav-inner">
+  <div class="nav-inner">
     <a href="#top" class="brand">
-      <svg class="brand-mark" viewBox="0 0 64 64" width="28" height="28" aria-hidden="true">
-        <path d="M32 4l16 20-16 36L16 24z" fill="url(#gg)" stroke="#D4AF37" stroke-width="1.5"/>
-        <defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#E8C86A"/><stop offset="1" stop-color="#B8860B"/>
-        </linearGradient></defs>
+      <svg class="brand-mark" viewBox="0 0 60 60" width="34" height="34" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M30 4 L52 22 L46 52 L14 52 L8 22 Z"/>
+          <path d="M30 12 L44 24 L40 44 L20 44 L16 24 Z" fill="currentColor" opacity=".3"/>
+          <path d="M30 12 L30 44 M16 24 L44 24 M20 44 L40 24 M40 44 L20 24"/>
+        </g>
       </svg>
-      <span class="brand-name">Diamand</span>
+      <span class="brand-wordmark">
+        <span class="brand-name">DIAMAND</span>
+        <span class="brand-sub">Bishkek · MMVIII</span>
+      </span>
     </a>
 
     <nav class="nav-links" id="navLinks">
       <a href="#about" data-i18n="nav_about">Биз жөнүндө</a>
+      <span class="nav-sep">◆</span>
       <a href="#services" data-i18n="nav_services">Кызматтар</a>
+      <span class="nav-sep">◆</span>
       <a href="#prices" data-i18n="nav_prices">Баалар</a>
+      <span class="nav-sep">◆</span>
       <a href="#gallery" data-i18n="nav_gallery">Галерея</a>
+      <span class="nav-sep">◆</span>
       <a href="#contacts" data-i18n="nav_contacts">Байланыш</a>
     </nav>
 
@@ -41,70 +87,99 @@
         <button data-lang="ru" class="lang-btn">RU</button>
         <button data-lang="en" class="lang-btn">EN</button>
       </div>
-      <a href="tel:+996700123456" class="btn btn-ghost nav-call" data-i18n="nav_call">Чалуу</a>
-      <button class="burger" id="burger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <!-- ===== Hero ===== -->
 <section id="top" class="hero">
-  <div class="aurora" aria-hidden="true">
-    <span class="a a1"></span><span class="a a2"></span><span class="a a3"></span>
-  </div>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="spotlight" aria-hidden="true"></div>
-  <div class="container hero-inner reveal">
-    <p class="eyebrow" data-i18n="hero_eyebrow">Premium Jewelry · 2008-жылдан бери</p>
-    <h1 class="hero-title" data-i18n="hero_title">Diamand</h1>
+  <div class="hero-pattern" aria-hidden="true"></div>
+  <svg class="hero-fan hero-fan-l" aria-hidden="true"><use href="#deco-fan"/></svg>
+  <svg class="hero-fan hero-fan-r" aria-hidden="true"><use href="#deco-fan"/></svg>
+
+  <div class="hero-inner">
+    <div class="hero-monogram" aria-hidden="true">
+      <svg viewBox="0 0 120 120" class="mono">
+        <g fill="none" stroke="currentColor" stroke-width="1">
+          <circle cx="60" cy="60" r="58"/>
+          <circle cx="60" cy="60" r="50"/>
+          <path d="M60 14 L100 60 L60 106 L20 60 Z"/>
+          <text x="60" y="72" text-anchor="middle" font-family="Italiana, serif" font-size="40" fill="currentColor" stroke="none">D</text>
+        </g>
+      </svg>
+    </div>
+
+    <p class="eyebrow eyebrow-center" data-i18n="hero_eyebrow">EST · MMVIII · Bishkek</p>
+
+    <h1 class="hero-title">
+      <span class="hero-title-flank" aria-hidden="true">◆</span>
+      <span class="hero-title-word" data-i18n="hero_title">Diamand</span>
+      <span class="hero-title-flank" aria-hidden="true">◆</span>
+    </h1>
+
+    <svg class="hero-chev" aria-hidden="true"><use href="#deco-chev"/></svg>
+
     <p class="hero-sub" data-i18n="hero_subtitle">Ар бир буюм — чеберлердин колунан чыккан өзгөчө тарых.</p>
+
     <div class="hero-ctas">
       <a href="#gallery" class="btn btn-primary" data-i18n="hero_cta_primary">Каталогду кароо</a>
       <a href="#contacts" class="btn btn-outline" data-i18n="hero_cta_secondary">Байланышуу</a>
     </div>
   </div>
-  <div class="hero-scroll" aria-hidden="true"><span></span></div>
 </section>
+
+<!-- ===== Chapter divider ===== -->
+<div class="chapter">
+  <span class="chapter-line"></span>
+  <svg class="chapter-diamond" aria-hidden="true"><use href="#deco-diamond"/></svg>
+  <span class="chapter-num">I</span>
+  <svg class="chapter-diamond" aria-hidden="true"><use href="#deco-diamond"/></svg>
+  <span class="chapter-line"></span>
+</div>
 
 <!-- ===== About ===== -->
 <section id="about" class="section">
   <div class="container">
-    <div class="about-grid reveal">
+    <div class="about-grid">
       <div class="about-copy">
         <p class="eyebrow" data-i18n="about_eyebrow">Биз жөнүндө</p>
-        <h2 data-i18n="about_title">Кылымдардан бери жашаган өнөр</h2>
+        <h2 class="deco-title" data-i18n="about_title">Кылымдардан бери жашаган өнөр</h2>
         <p class="lead" data-i18n="about_text">Diamand — Бишкектеги өзгөчө зергер дүкөнү...</p>
+        <div class="about-sig">
+          <svg viewBox="0 0 100 40" class="sig-svg" aria-hidden="true">
+            <path d="M5 25 Q20 5 35 25 T65 25 T95 25" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+          <span class="sig-text">Master of Diamand</span>
+        </div>
       </div>
-      <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80" alt="Jewelry workshop" loading="lazy"/>
-        <div class="about-badge">
-          <span class="badge-num">15+</span>
-          <span class="badge-text">years</span>
+
+      <div class="about-frame">
+        <svg class="fc fc-tl" aria-hidden="true"><use href="#deco-corner"/></svg>
+        <svg class="fc fc-tr" aria-hidden="true"><use href="#deco-corner"/></svg>
+        <svg class="fc fc-bl" aria-hidden="true"><use href="#deco-corner"/></svg>
+        <svg class="fc fc-br" aria-hidden="true"><use href="#deco-corner"/></svg>
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=85" alt="Atelier" loading="lazy"/>
+        <div class="about-plaque">
+          <span class="plaque-num">XV</span>
+          <span class="plaque-txt">ANS · YEARS</span>
         </div>
       </div>
     </div>
 
     <div class="features">
-      <div class="feature reveal">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-        </div>
+      <div class="feat-card">
+        <div class="feat-medal">I</div>
         <h3 data-i18n="feat_1_title">Сапат кепилдиги</h3>
         <p data-i18n="feat_1_text">Ар бир буюмга расмий сертификат.</p>
       </div>
-      <div class="feature reveal">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l3-9 6 6 6-6 3 9-9 9z"/></svg>
-        </div>
+      <div class="feat-card">
+        <div class="feat-medal">II</div>
         <h3 data-i18n="feat_2_title">Чебер кол эмгек</h3>
         <p data-i18n="feat_2_text">30 жылдан ашык тажрыйба.</p>
       </div>
-      <div class="feature reveal">
-        <div class="feat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10h4a2 2 0 010 4H9"/></svg>
-        </div>
+      <div class="feat-card">
+        <div class="feat-medal">III</div>
         <h3 data-i18n="feat_3_title">Адилет баа</h3>
         <p data-i18n="feat_3_text">Түздөн-түз өндүрүүчүдөн.</p>
       </div>
@@ -112,98 +187,95 @@
   </div>
 </section>
 
+<div class="chapter">
+  <span class="chapter-line"></span>
+  <svg class="chapter-diamond" aria-hidden="true"><use href="#deco-diamond"/></svg>
+  <span class="chapter-num">II</span>
+  <svg class="chapter-diamond" aria-hidden="true"><use href="#deco-diamond"/></svg>
+  <span class="chapter-line"></span>
+</div>
+
 <!-- ===== Services ===== -->
-<section id="services" class="section section-dark">
+<section id="services" class="section section-emerald">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow" data-i18n="services_eyebrow">Кызматтар</p>
-      <h2 data-i18n="services_title">Биз эмне сунуштайбыз</h2>
+    <div class="section-head">
+      <p class="eyebrow eyebrow-center" data-i18n="services_eyebrow">Кызматтар</p>
+      <h2 class="deco-title" data-i18n="services_title">Биз эмне сунуштайбыз</h2>
     </div>
-    <div class="services-grid">
-      <article class="service-card reveal">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy"/>
+
+    <div class="services-row">
+      <article class="srv">
+        <div class="srv-top">
+          <svg class="srv-fan" aria-hidden="true"><use href="#deco-fan"/></svg>
+          <span class="srv-num">№ 01</span>
         </div>
-        <div class="service-body">
-          <h3 data-i18n="srv_1_title">Зергер буюмдарын сатуу</h3>
-          <p data-i18n="srv_1_text">Алтын жана күмүш буюмдар...</p>
-          <a href="#gallery" class="link-gold" data-i18n="srv_1_cta">Каталогду кароо →</a>
-        </div>
+        <div class="srv-img"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy"/></div>
+        <h3 data-i18n="srv_1_title">Зергер буюмдарын сатуу</h3>
+        <p data-i18n="srv_1_text">Алтын жана күмүш буюмдар.</p>
+        <a href="#gallery" class="deco-link" data-i18n="srv_1_cta">Каталог</a>
       </article>
 
-      <article class="service-card reveal">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy"/>
+      <article class="srv">
+        <div class="srv-top">
+          <svg class="srv-fan" aria-hidden="true"><use href="#deco-fan"/></svg>
+          <span class="srv-num">№ 02</span>
         </div>
-        <div class="service-body">
-          <h3 data-i18n="srv_2_title">Заказ боюнча жасоо</h3>
-          <p data-i18n="srv_2_text">Сиздин эскизиңиз боюнча...</p>
-          <a href="#contacts" class="link-gold" data-i18n="srv_2_cta">Заказ берүү →</a>
-        </div>
+        <div class="srv-img"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy"/></div>
+        <h3 data-i18n="srv_2_title">Заказ боюнча</h3>
+        <p data-i18n="srv_2_text">Сиздин эскизиңиз боюнча.</p>
+        <a href="#contacts" class="deco-link" data-i18n="srv_2_cta">Заказ берүү</a>
       </article>
 
-      <article class="service-card reveal">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1620625515032-6ed0c1790c75?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy"/>
+      <article class="srv">
+        <div class="srv-top">
+          <svg class="srv-fan" aria-hidden="true"><use href="#deco-fan"/></svg>
+          <span class="srv-num">№ 03</span>
         </div>
-        <div class="service-body">
-          <h3 data-i18n="srv_3_title">Алтын сатып алуу</h3>
-          <p data-i18n="srv_3_text">Эски алтын буюмдарды...</p>
-          <a href="#prices" class="link-gold" data-i18n="srv_3_cta">Учурдагы баа →</a>
-        </div>
+        <div class="srv-img"><img src="https://images.unsplash.com/photo-1620625515032-6ed0c1790c75?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy"/></div>
+        <h3 data-i18n="srv_3_title">Алтын сатып алуу</h3>
+        <p data-i18n="srv_3_text">Эски алтын буюмдарды.</p>
+        <a href="#prices" class="deco-link" data-i18n="srv_3_cta">Учурдагы баа</a>
       </article>
     </div>
   </div>
 </section>
 
+<div class="chapter">
+  <span class="chapter-line"></span>
+  <svg class="chapter-diamond" aria-hidden="true"><use href="#deco-diamond"/></svg>
+  <span class="chapter-num">III</span>
+  <svg class="chapter-diamond" aria-hidden="true"><use href="#deco-diamond"/></svg>
+  <span class="chapter-line"></span>
+</div>
+
 <!-- ===== Prices ===== -->
 <section id="prices" class="section">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow" data-i18n="prices_eyebrow">Баалар</p>
-      <h2 data-i18n="prices_title">Учурдагы баалар (1 грамм)</h2>
+    <div class="section-head">
+      <p class="eyebrow eyebrow-center" data-i18n="prices_eyebrow">Баалар</p>
+      <h2 class="deco-title" data-i18n="prices_title">Учурдагы баалар · 1 грамм</h2>
     </div>
-    <div class="price-wrap reveal">
+
+    <div class="price-card">
+      <svg class="fc fc-tl" aria-hidden="true"><use href="#deco-corner"/></svg>
+      <svg class="fc fc-tr" aria-hidden="true"><use href="#deco-corner"/></svg>
+      <svg class="fc fc-bl" aria-hidden="true"><use href="#deco-corner"/></svg>
+      <svg class="fc fc-br" aria-hidden="true"><use href="#deco-corner"/></svg>
       <table class="price-table">
         <thead>
           <tr>
-            <th data-i18n="th_type">Буюмдун түрү</th>
-            <th data-i18n="th_metal">Металл / Пробасы</th>
-            <th data-i18n="th_sell">Сатуу (1г)</th>
-            <th data-i18n="th_buy">Сатып алуу (1г)</th>
+            <th data-i18n="th_type">Түрү</th>
+            <th data-i18n="th_metal">Металл</th>
+            <th data-i18n="th_sell">Сатуу</th>
+            <th data-i18n="th_buy">Сатып алуу</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td data-i18n="row_ring">Шакек</td>
-            <td><span data-i18n="gold_585">Алтын 585°</span></td>
-            <td>7 200 <span data-i18n="som">сом</span></td>
-            <td>6 400 <span data-i18n="som">сом</span></td>
-          </tr>
-          <tr>
-            <td data-i18n="row_earring">Кулак сырга</td>
-            <td><span data-i18n="gold_585">Алтын 585°</span></td>
-            <td>7 300 <span data-i18n="som">сом</span></td>
-            <td>6 400 <span data-i18n="som">сом</span></td>
-          </tr>
-          <tr>
-            <td data-i18n="row_chain">Чынжыр</td>
-            <td><span data-i18n="gold_750">Алтын 750°</span></td>
-            <td>9 500 <span data-i18n="som">сом</span></td>
-            <td>8 400 <span data-i18n="som">сом</span></td>
-          </tr>
-          <tr>
-            <td data-i18n="row_bracelet">Билерик</td>
-            <td><span data-i18n="gold_750">Алтын 750°</span></td>
-            <td>9 600 <span data-i18n="som">сом</span></td>
-            <td>8 400 <span data-i18n="som">сом</span></td>
-          </tr>
-          <tr>
-            <td data-i18n="row_silver">Күмүш буюмдар</td>
-            <td><span data-i18n="silver_925">Күмүш 925°</span></td>
-            <td>180 <span data-i18n="som">сом</span></td>
-            <td>90 <span data-i18n="som">сом</span></td>
-          </tr>
+          <tr><td data-i18n="row_ring">Шакек</td><td><span data-i18n="gold_585">Алтын 585°</span></td><td>7 200 <span data-i18n="som">сом</span></td><td>6 400 <span data-i18n="som">сом</span></td></tr>
+          <tr><td data-i18n="row_earring">Кулак сырга</td><td><span data-i18n="gold_585">Алтын 585°</span></td><td>7 300 <span data-i18n="som">сом</span></td><td>6 400 <span data-i18n="som">сом</span></td></tr>
+          <tr><td data-i18n="row_chain">Чынжыр</td><td><span data-i18n="gold_750">Алтын 750°</span></td><td>9 500 <span data-i18n="som">сом</span></td><td>8 400 <span data-i18n="som">сом</span></td></tr>
+          <tr><td data-i18n="row_bracelet">Билерик</td><td><span data-i18n="gold_750">Алтын 750°</span></td><td>9 600 <span data-i18n="som">сом</span></td><td>8 400 <span data-i18n="som">сом</span></td></tr>
+          <tr><td data-i18n="row_silver">Күмүш</td><td><span data-i18n="silver_925">Күмүш 925°</span></td><td>180 <span data-i18n="som">сом</span></td><td>90 <span data-i18n="som">сом</span></td></tr>
         </tbody>
       </table>
       <p class="price-note" data-i18n="prices_note">* Баалар жаңыланып турат.</p>
@@ -211,89 +283,90 @@
   </div>
 </section>
 
+<div class="chapter">
+  <span class="chapter-line"></span>
+  <svg class="chapter-diamond" aria-hidden="true"><use href="#deco-diamond"/></svg>
+  <span class="chapter-num">IV</span>
+  <svg class="chapter-diamond" aria-hidden="true"><use href="#deco-diamond"/></svg>
+  <span class="chapter-line"></span>
+</div>
+
 <!-- ===== Gallery ===== -->
-<section id="gallery" class="section section-dark">
+<section id="gallery" class="section section-emerald">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow" data-i18n="gallery_eyebrow">Галерея</p>
-      <h2 data-i18n="gallery_title">Биздин коллекция</h2>
+    <div class="section-head">
+      <p class="eyebrow eyebrow-center" data-i18n="gallery_eyebrow">Галерея</p>
+      <h2 class="deco-title" data-i18n="gallery_title">Биздин коллекция</h2>
     </div>
-    <div class="gallery">
-      <figure class="gal-item reveal" data-full="https://images.unsplash.com/photo-1603561596112-db542ceb6a9e?auto=format&fit=crop&w=1600&q=85">
-        <img src="https://images.unsplash.com/photo-1603561596112-db542ceb6a9e?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/>
-      </figure>
-      <figure class="gal-item reveal tall" data-full="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1600&q=85">
-        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/>
-      </figure>
-      <figure class="gal-item reveal" data-full="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=1600&q=85">
-        <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/>
-      </figure>
-      <figure class="gal-item reveal wide" data-full="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1600&q=85">
-        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1000&q=80" alt="" loading="lazy"/>
-      </figure>
-      <figure class="gal-item reveal" data-full="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1600&q=85">
-        <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/>
-      </figure>
-      <figure class="gal-item reveal" data-full="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1600&q=85">
-        <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/>
-      </figure>
-      <figure class="gal-item reveal tall" data-full="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1600&q=85">
-        <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/>
-      </figure>
-      <figure class="gal-item reveal" data-full="https://images.unsplash.com/photo-1591209627173-5dacc6dbe74d?auto=format&fit=crop&w=1600&q=85">
-        <img src="https://images.unsplash.com/photo-1591209627173-5dacc6dbe74d?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/>
-      </figure>
-      <figure class="gal-item reveal wide" data-full="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=85">
-        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1000&q=80" alt="" loading="lazy"/>
-      </figure>
-      <figure class="gal-item reveal" data-full="https://images.unsplash.com/photo-1568297672055-dcd1fd9d01b7?auto=format&fit=crop&w=1600&q=85">
-        <img src="https://images.unsplash.com/photo-1568297672055-dcd1fd9d01b7?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/>
-      </figure>
+
+    <div class="mosaic">
+      <figure class="tile t-big" data-full="https://images.unsplash.com/photo-1603561596112-db542ceb6a9e?auto=format&fit=crop&w=1600&q=85">
+        <img src="https://images.unsplash.com/photo-1603561596112-db542ceb6a9e?auto=format&fit=crop&w=1100&q=80" alt="" loading="lazy"/></figure>
+      <figure class="tile" data-full="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1600&q=85">
+        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/></figure>
+      <figure class="tile" data-full="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=1600&q=85">
+        <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/></figure>
+      <figure class="tile t-tall" data-full="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1600&q=85">
+        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy"/></figure>
+      <figure class="tile" data-full="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1600&q=85">
+        <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/></figure>
+      <figure class="tile" data-full="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1600&q=85">
+        <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/></figure>
+      <figure class="tile t-wide" data-full="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1600&q=85">
+        <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1100&q=80" alt="" loading="lazy"/></figure>
+      <figure class="tile" data-full="https://images.unsplash.com/photo-1591209627173-5dacc6dbe74d?auto=format&fit=crop&w=1600&q=85">
+        <img src="https://images.unsplash.com/photo-1591209627173-5dacc6dbe74d?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/></figure>
+      <figure class="tile" data-full="https://images.unsplash.com/photo-1568297672055-dcd1fd9d01b7?auto=format&fit=crop&w=1600&q=85">
+        <img src="https://images.unsplash.com/photo-1568297672055-dcd1fd9d01b7?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"/></figure>
     </div>
   </div>
 </section>
 
+<div class="chapter">
+  <span class="chapter-line"></span>
+  <svg class="chapter-diamond" aria-hidden="true"><use href="#deco-diamond"/></svg>
+  <span class="chapter-num">V</span>
+  <svg class="chapter-diamond" aria-hidden="true"><use href="#deco-diamond"/></svg>
+  <span class="chapter-line"></span>
+</div>
+
 <!-- ===== Contacts ===== -->
 <section id="contacts" class="section">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow" data-i18n="contacts_eyebrow">Байланыш</p>
-      <h2 data-i18n="contacts_title">Бизге келиңиз</h2>
+    <div class="section-head">
+      <p class="eyebrow eyebrow-center" data-i18n="contacts_eyebrow">Байланыш</p>
+      <h2 class="deco-title" data-i18n="contacts_title">Бизге келиңиз</h2>
     </div>
+
     <div class="contacts-grid">
-      <div class="contact-info reveal">
-        <div class="ci-row">
-          <div class="ci-label" data-i18n="contact_address_label">Дарек</div>
-          <div class="ci-value" data-i18n="contact_address">Бишкек, Чүй проспекти 123</div>
-        </div>
-        <div class="ci-row">
-          <div class="ci-label" data-i18n="contact_phone_label">Телефон</div>
-          <div class="ci-value">
-            <a href="tel:+996700123456">+996 700 123 456</a><br/>
-            <a href="tel:+996550123456">+996 550 123 456</a>
-          </div>
-        </div>
-        <div class="ci-row">
-          <div class="ci-label" data-i18n="contact_hours_label">Иш убактысы</div>
-          <div class="ci-value" data-i18n="contact_hours">Дш-Жм: 09:00 — 19:00</div>
-        </div>
-        <div class="ci-row">
-          <div class="ci-label" data-i18n="contact_social_label">Соц. тармактар</div>
-          <div class="ci-value socials">
-            <a href="https://wa.me/996700123456" target="_blank" rel="noopener" aria-label="WhatsApp">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0012 0C5.4 0 0 5.4 0 12a12 12 0 001.6 6L0 24l6.2-1.6A12 12 0 0012 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5zM12 22a10 10 0 01-5.1-1.4l-.3-.2-3.7 1 1-3.6-.3-.4A10 10 0 1122 12a10 10 0 01-10 10zm5.5-7.5c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7 0-.3-.2-1.3-.5-2.4-1.5a9 9 0 01-1.7-2c-.1-.3 0-.5.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.6s1.1 3 1.3 3.2c.2.3 2.3 3.5 5.5 4.8l1.8.7c.8.2 1.5.2 2 .1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-            </a>
-            <a href="tel:+996700123456" aria-label="Phone">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.9v3a2 2 0 01-2.2 2 20 20 0 01-8.6-3 19.5 19.5 0 01-6-6 20 20 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 2.9a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c1 .3 1.9.5 2.9.6a2 2 0 011.7 2z"/></svg>
-            </a>
-          </div>
-        </div>
+      <div class="contact-card">
+        <svg class="fc fc-tl" aria-hidden="true"><use href="#deco-corner"/></svg>
+        <svg class="fc fc-tr" aria-hidden="true"><use href="#deco-corner"/></svg>
+        <svg class="fc fc-bl" aria-hidden="true"><use href="#deco-corner"/></svg>
+        <svg class="fc fc-br" aria-hidden="true"><use href="#deco-corner"/></svg>
+        <dl class="contact-list">
+          <dt data-i18n="contact_address_label">Дарек</dt>
+          <dd data-i18n="contact_address">Бишкек, Чүй проспекти 123</dd>
+          <dt data-i18n="contact_phone_label">Телефон</dt>
+          <dd><a href="tel:+996700123456">+996 700 123 456</a><br/><a href="tel:+996550123456">+996 550 123 456</a></dd>
+          <dt data-i18n="contact_hours_label">Иш убактысы</dt>
+          <dd data-i18n="contact_hours">Дш-Жм 09:00 — 19:00</dd>
+          <dt data-i18n="contact_social_label">Соц. тармактар</dt>
+          <dd class="socials">
+            <a href="https://wa.me/996700123456" aria-label="WhatsApp">WhatsApp</a>
+            <span>·</span>
+            <a href="https://instagram.com" aria-label="Instagram">Instagram</a>
+            <span>·</span>
+            <a href="tel:+996700123456" aria-label="Call">Phone</a>
+          </dd>
+        </dl>
       </div>
 
-      <div class="map-wrap reveal">
+      <div class="map-card">
+        <svg class="fc fc-tl" aria-hidden="true"><use href="#deco-corner"/></svg>
+        <svg class="fc fc-tr" aria-hidden="true"><use href="#deco-corner"/></svg>
+        <svg class="fc fc-bl" aria-hidden="true"><use href="#deco-corner"/></svg>
+        <svg class="fc fc-br" aria-hidden="true"><use href="#deco-corner"/></svg>
         <iframe
           title="Diamand map"
           src="https://www.openstreetmap.org/export/embed.html?bbox=74.595%2C42.870%2C74.615%2C42.880&amp;layer=mapnik&amp;marker=42.875%2C74.605"
@@ -307,15 +380,14 @@
 <!-- ===== Footer ===== -->
 <footer class="footer">
   <div class="container footer-inner">
-    <div class="footer-brand">
-      <span class="brand-name">Diamand</span>
-      <span class="footer-tag" data-i18n="footer_tagline">Сапат. Кооздук. Ишеним.</span>
-    </div>
-    <p class="footer-rights">© 2026 Diamand. <span data-i18n="footer_rights">Бардык укуктар корголгон.</span></p>
+    <svg class="footer-fan" aria-hidden="true"><use href="#deco-fan"/></svg>
+    <div class="footer-brand">DIAMAND</div>
+    <p class="footer-tag" data-i18n="footer_tagline">Сапат · Кооздук · Ишеним</p>
+    <p class="footer-rights">MMXXVI · <span data-i18n="footer_rights">Бардык укуктар корголгон.</span></p>
   </div>
 </footer>
 
-<!-- ===== Lightbox ===== -->
+<!-- Lightbox -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
   <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">‹</button>
@@ -323,7 +395,6 @@
   <button class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
 </div>
 
-<script src="i18n.js"></script>
-<script src="script.js"></script>
+<script type="module" src="/src/main.ts"></script>
 </body>
 </html>
