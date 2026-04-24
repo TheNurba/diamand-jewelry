@@ -100,4 +100,47 @@
     else if (e.key === 'ArrowLeft') open(idx - 1);
     else if (e.key === 'ArrowRight') open(idx + 1);
   });
+
+  // ===== Cinematic extras =====
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = matchMedia('(pointer:fine)').matches;
+
+  // Nav scrolled state
+  const navEl = document.querySelector('.nav');
+  const onScroll = () => navEl.classList.toggle('scrolled', window.scrollY > 12);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Hero parallax
+  if (!reduced) {
+    const heroInner = document.querySelector('.hero-inner');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = Math.min(window.scrollY, 800);
+        heroInner.style.transform = `translateY(${y * 0.18}px)`;
+        heroInner.style.opacity = String(Math.max(1 - y / 600, 0));
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
+  // Spotlight
+  if (!reduced && finePointer) {
+    const hero = document.querySelector('.hero');
+    const spot = hero.querySelector('.spotlight');
+    let rafId = 0, px = 50, py = 50;
+    hero.addEventListener('mousemove', e => {
+      const r = hero.getBoundingClientRect();
+      px = ((e.clientX - r.left) / r.width) * 100;
+      py = ((e.clientY - r.top) / r.height) * 100;
+      if (!rafId) rafId = requestAnimationFrame(() => {
+        spot.style.setProperty('--mx', px + '%');
+        spot.style.setProperty('--my', py + '%');
+        rafId = 0;
+      });
+    });
+  }
 })();
